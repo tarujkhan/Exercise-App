@@ -22,3 +22,27 @@ Use shotgun
 For Controller:
 Use helper methods as well
 
+-app
+  |- controllers
+      |- application_controller.rb
+	-client_controller.rb
+	-exercise_controller.rb
+  |- models
+      |- client.rb has_many relationship
+	-exercise.belongs_to relationship
+  |- views
+       |- clients
+          |- new.erb
+	   -index.erb
+	   -show.erb
+	   -edit.erb		
+      |- exercises
+          |-edit.erb
+	   -index.erb
+           -new.erb 
+           -show.erb
+      
+-config
+-db
+-spec
+-readme

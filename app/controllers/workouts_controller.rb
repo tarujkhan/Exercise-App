@@ -1,0 +1,2 @@
+class WorkouTsController < ApplicationController
+end
