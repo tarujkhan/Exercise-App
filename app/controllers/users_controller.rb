@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
     get '/register' do 
     if !session[:user_id]
-        erb :'users/create_user'
+        erb :'user/create_user'
     else 
         redirect to '/work_outs' 
 end
@@ -12,7 +12,7 @@ end
 @user = User.new(params)
 if !@user.save
 @errors = @user.errors.full_messages 
-erb :"users/create_user"
+erb :"user/create_user"
 else
     session[:user_id] = @user.id 
     redirect to '/work_outs'
@@ -21,26 +21,26 @@ end
 
 get '/login' do 
     if !session[:user_id] 
-        erb :'users/login'
+        erb :'user/login'
     else 
         redirect to '/work_outs'
     end
 end
 
 post '/login' do
-@user = User.find_by(username: params[:username])
+@user = User.find_by(user_name: params[:username])
 if @user && @user.authenticate(params[:password])
     session[:user_id] = @user_id
     redirect to '/work_outs'
 else
     @errors = "The username or password is not correct."
-    erb :'users/login'
+    erb :'user/login'
 end
 end
 
 get '/logout' do
 if logged_in?
-    @user = create_user
+    @user = current_user
     @user = nil
     session.destroy
     redirect to '/login'
