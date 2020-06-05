@@ -2,18 +2,20 @@ class WorkOutController < ApplicationController
 
     get '/work_outs' do 
         if logged_in? 
-            
-            Workout.where(current_user.id : user_id)
+            @workout = current_user.workout
+           #@workout = WorkOut.where(current_user.id: workout.user_id)
             erb :'/workou_ts/showwork_out'
         else 
             redirect to '/login'
         end
 end
 
+
     get '/work_outs/new' do 
         if logged_in?
             @current_user
-            current_user[:user_id] = user.id
+            @workout = Workout.new(params[:workout])
+           #workout.user_id = current_user.id
     erb :'/workou_ts/newwork_out'
         else
             redirect to '/login'
