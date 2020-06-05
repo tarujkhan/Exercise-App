@@ -1,1 +1,44 @@
 <h1>Here are your workouts.</h1>
+
+<br></br>
+
+<h2><%= @workout.name %></h2>
+
+<br>
+
+
+<p><b>Date:</b> <%= @workout.date %></p>
+
+<p><b>Numberofreps:</b> <%= @workout.numberofreps %></p>
+
+<p><b>Duration:</b> <%= @workout.duration %></p>
+
+
+
+<br>
+
+
+
+<a href="/work_outs/<%= @workout.id %>/edit">Edit Workout</a>
+
+
+
+<br></br>
+
+
+
+<form action="/work_outs/<%= @workout.id %>/delete" method="POST">
+
+  <input type="hidden" id="hidden" name="_method" value="DELETE"/>
+
+  <input type="submit" value="Delete Workout">
+
+</form>
+
+
+
+<br></br>
+
+
+
+<a href="/work_outs">View All Workouts</a>

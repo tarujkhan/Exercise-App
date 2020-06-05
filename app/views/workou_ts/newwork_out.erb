@@ -18,9 +18,9 @@
 
 
 
-<form action="/workouts" method="POST">
+<form action="/work_outs" method="POST">
 
-  <label for="vworkout">Workout: </label>
+  <label for="workout">Workout: </label>
 
   <input type="text" name="workout" id="workout"/>
 
@@ -29,8 +29,21 @@
   <br></br>
 
 
-
   <label for="date">Date: </label>
 
   <input type="date" name="date" id="date"/>
 
+
+<br></br>
+
+<label for="numberofreps">Numberofreps: </label>
+  <input type="integer" name="numberofreps" id="numberofreps">
+  
+  <br></br>
+
+  <label for="duration">Duration: </label>
+  <input type="integer" name="duration" id="duration">
+
+<br></br>
+<input type="submit" value="Create Workout">
+</form>
