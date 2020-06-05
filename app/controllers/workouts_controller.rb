@@ -1,4 +1,4 @@
-        class WorkOutController < ApplicationController
+        class WorkoutsController < ApplicationController
 
             get '/work_outs' do 
                 if logged_in? 
