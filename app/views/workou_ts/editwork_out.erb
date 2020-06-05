@@ -1,20 +1,10 @@
 <h1>Edit your workouts</h1>
-
 <% if @errors %>
-
   <% @errors.each do |error| %>
-
     <p style="color: red;"><%= error %></p>
-
   <% end %>
-
 <% end %>
-
-
-<br></br>
-
-
-
+<br>
 <form action="/work_outs/<%= @workout.id %>" method="POST">
 
   <input type="hidden" id="hidden" name="_method" value="patch"/>
@@ -24,40 +14,16 @@
   <label for="name">Name: </label>
 
     <input type="text" name="name" id="name" value="<%= @workout.name %>"/>
-
-
-
-  <br></br>
-
-
-
-  <label for="date">Date: </label>
-
-    <input type="date" name="date" id="date" value="<%= @workout.date %>"/>
-
-
-
-  <br></br>
-
-  <label for="nummbeofreps">Number of reps/laps:  </label>
-
-    <input type="number" name="numberofreps" id="numberofreps" value="<%= @workout.numberofreps %>"/>
-
-
-
-  <br></br>
-
-  <label for="duration">Duration/Minutes: </label>
-
-     <input type="text" name="duration" id="duration" value="<%= @workout.duration %>"/>
-
-
-
-  <br></br>
-
-    <input type="submit" value="Update Workout"/>
-
-
-  <br></br>
-
+<br>
+<label for="date">Date: </label>
+<input type="date" name="date" id="date" value="<%= @workout.date %>"/>
+<br>
+<label for="nummbeofreps">Number of reps/laps:  </label>
+<input type="number" name="numberofreps" id="numberofreps" value="<%= @workout.numberofreps %>"/>
+<br>
+<label for="duration">Duration/Minutes: </label>
+<input type="text" name="duration" id="duration" value="<%= @workout.duration %>"/>
+<br>
+<input type="submit" value="Update Workout"/>
+<br>
 </form>

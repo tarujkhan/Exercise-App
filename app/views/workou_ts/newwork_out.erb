@@ -1,49 +1,27 @@
 <h1>Create New Work Out</h1>
-
-
-
 <% if @errors %>
-
   <% @errors.each do |error| %>
-
     <p style="color: red;"><%= error %></p>
-
   <% end %>
-
 <% end %>
-
-
-
-<br></br>
-
-
-
+<br>
+</br>
 <form action="/work_outs" method="POST">
-
   <label for="name">Workout: </label>
-
   <input type="text" name="name" id="name"/>
-
-
-
-  <br></br>
-
-
-  <label for="date">Date: </label>
-
-  <input type="date" name="date" id="date"/>
-
-
-<br></br>
-
+  <br>
+</br>
+<label for="date">Date: </label>
+<input type="date" name="date" id="date"/>
+<br>
+</br>
 <label for="numberofreps">Number of reps/laps: </label>
-  <input type="integer" name="numberofreps" id="numberofreps">
-  
-  <br></br>
-
-  <label for="duration">Duration/Minutes: </label>
-  <input type="integer" name="duration" id="duration">
-
-<br></br>
+<input type="integer" name="numberofreps" id="numberofreps">
+<br>
+</br>
+<label for="duration">Duration/Minutes: </label>
+<input type="integer" name="duration" id="duration">
+<br>
+</br>
 <input type="submit" value="Create Workout">
 </form>
