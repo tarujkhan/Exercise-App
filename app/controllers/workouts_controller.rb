@@ -61,10 +61,10 @@
                     @workout = Workout.find(params[:id])
                     @workout.name = params[:name]
                     @workout.date = params[:date]
-                    @expense.numberofreps = params[:numberofreps]
-                    @expense.duration = params[:duration]
+                    @workout.numberofreps = params[:numberofreps]
+                    @workout.duration = params[:duration]
                 
-                    if !@expense.save
+                    if !@workout.save
                     @errors = @workout.errors.full_messages
                     erb :'/workou_ts/editwork_out'
                     else

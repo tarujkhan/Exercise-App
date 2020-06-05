@@ -22,8 +22,8 @@
 
       <% if workout.user_id == @current_user.id %>
 
-        <li><a href="/work_outs/<%= workout.id %>"><b><%= workout.name %></b></a> from <%= workout.date %> for $<%= "%.2f" % workout.numberofreps %></li>
-
+        <li><a href="/work_outs/<%= workout.id %>"><b><%= workout.name %></b></a> 
+        
         <br></br>
 
       <% end %>
