@@ -18,8 +18,24 @@
 
         <%= yield %>
 
-      <footer class="branding">
-        <small>&copy; 2020 <strong>AppName</strong></small>
+      
+
+      <footer>
+
+        <small>&copy; 2020 <strong>SinatraExerciseTracker</strong></small> /
+
+        <% if logged_in? %>
+
+          <small><strong><a href="/logout">Log Out</a></strong></small>
+
+        <% else %>
+
+          <small><strong><a href="/login">Log In</a></strong></small> /
+
+          <small><strong><a href="/login">Register</a></strong></small>
+
+        <% end %>
+
       </footer>
     </div>
 

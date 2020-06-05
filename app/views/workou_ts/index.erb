@@ -1,0 +1,41 @@
+<p>Welcome <b><%= @current_user.user_name%></b>!</p>
+
+
+
+<% if @errors %>
+
+  <p style="color: red;"><%= @errors %></p>
+
+<% end %>
+
+
+
+<h1>My Workouts</h1>
+
+<br>
+
+<ul>
+
+  <% if @workout.size > 0 %>
+
+    <% @workout.each do |workout| %>
+
+      <% if workout.user_id == @current_user.id %>
+
+        <li><a href="/work_outs/<%= workout.id %>"><b><%= workout.name %></b></a> from <%= workout.date %> for $<%= "%.2f" % workout.numberofreps %></li>
+
+        <br></br>
+
+      <% end %>
+
+    <% end %>
+
+    <a href="/work_outs/new">Create new workout</a>
+
+  <% else %>
+
+    <p>You don't have any work outs! <a href="/work_outs/new">Create a new one here</a>.</p>
+
+  <% end %>
+
+</ul>

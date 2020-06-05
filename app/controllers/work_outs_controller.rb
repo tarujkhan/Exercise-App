@@ -4,7 +4,7 @@
                 if logged_in? 
                 @workout = current_user.workouts
            #@workout = WorkOut.where(current_user.id: workout.user_id)
-                 erb :'/workou_ts/showwork_out'
+                 erb :'/workou_ts/index'
             else 
                 redirect to '/login'
                 end
@@ -14,7 +14,7 @@
              get '/work_outs/new' do 
                 if logged_in?
                 @current_user
-                @workout = Workout.new(params[:workout])
+               # @workout = Workout.new(params[:workout])
            #workout.user_id = current_user.id
                 erb :'/workou_ts/newwork_out'
             else
@@ -24,7 +24,7 @@
 
              post '/work_outs' do 
                 if logged_in?
-                @workout = current_user.work_outs.build(params)
+                @workout = current_user.workouts.build(params)
                 if !@workout.save
                 @errors = @workout.errors.full_messages
                 erb :'/workou_ts/newwork_out'
