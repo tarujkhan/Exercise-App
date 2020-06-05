@@ -84,4 +84,9 @@
                    redirect to '/login'
                    end
                 end
+
+                get '/advice' do
+                    erb :'/workou_ts/advice'
             end 
+        end
+    
