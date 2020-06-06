@@ -1,11 +1,11 @@
 
 Content and Objectives:
 
-1. Create a basic app for exercise
+1. Create a basic app for tracking work outs
 2. This app will let someone create an account or log in to an existing account
-3. A person can add an exercise with its details as well as edit and delete
-4. The details will be the date, name of exercise, number of reps and the time
-5. The app is based on the concept of Active Record with CRUD as well as the restful routes concept
+3. A person can add a work oute with its details as well as edit and delete
+4. The details will be the date, name of the work out, number of reps and the time
+5. The app is based on the concept of Active Record with CRUD as well as the restful routes 
 6. It will have the MVC concept (Model, View, Controller)
 7. The models will be responsible for the classes
 8. The controller will be responsible for execution
@@ -24,25 +24,28 @@ Use helper methods as well
 
 -app
   |- controllers
-      |- application_controller.rb
-	-client_controller.rb
-	-exercise_controller.rb
+        -application_controller.rb
+      	-users_controller.rb
+	      -workouts_controller.rb
   |- models
-      |- client.rb has_many relationship
-	-exercise.belongs_to relationship
+        -user.rb - has_many relationship
+	      -workouts - belongs_to relationship
   |- views
-       |- clients
-          |- new.erb
-	   -index.erb
-	   -show.erb
-	   -edit.erb		
-      |- exercises
-          |-edit.erb
-	   -index.erb
-           -new.erb 
-           -show.erb
-      
+       |- user
+          |- create_user.erb
+          |- login.erb
+			 |- workou_ts
+          |-editwork_out.erb
+           -index.erb
+           -newwork_out.erb 
+           -showwork_out.erb
+           -advice.erb
+       -welcome.erb
+       -layout.erb
 -config
 -db
+ -schema
+ -migrations
 -spec
 -readme
+-spec.md
