@@ -1,8 +1,6 @@
     
     class UsersController < ApplicationController
 
-  
-
        get '/register' do 
                 
             if !session[:user_id]
@@ -28,7 +26,6 @@
         end
 
         get '/login' do
-            #if !logged_in? 
             if !session[:user_id] 
             erb :'user/login'
         else 

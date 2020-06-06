@@ -3,8 +3,7 @@
             get '/work_outs' do 
                 if logged_in? 
                 @workout = current_user.workouts
-           #@workout = WorkOut.where(current_user.id: workout.user_id)
-                 erb :'/workou_ts/index'
+                erb :'/workou_ts/index'
             else 
                 redirect to '/login'
                 end
@@ -14,8 +13,6 @@
              get '/work_outs/new' do 
                 if logged_in?
                 @current_user
-               # @workout = Workout.new(params[:workout])
-           #workout.user_id = current_user.id
                 erb :'/workou_ts/newwork_out'
             else
                 redirect to '/login'
@@ -46,7 +43,7 @@
                 end
 
             get '/work_outs/:id/edit' do
-                   @workout = Workout.find(params[:id])
+                @workout = Workout.find(params[:id])
                     if logged_in? && @workout.user == current_user
                       @workout = Workout.find(params[:id])
                       @user = User.find(session[:user_id])
