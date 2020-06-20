@@ -20,7 +20,7 @@
 
     <% @workout.each do |workout| %>
 
-      <% if workout.user_id == @current_user.id %>
+      <% if workout.user_id == current_user.id %>
 
         <li><a href="/work_outs/<%= workout.id %>"><b><%= workout.name %></b></a> 
         
@@ -35,7 +35,8 @@
   <% else %>
 
     <p>You don't have any work outs! <a href="/work_outs/new">Create a new one here</a>.</p>
-
-  <% end %>
+    <% end %>
+<p>Homepage! <a href="/homepage">Click here to go to homepage</a>.</p>
+  
 
 </ul>

@@ -9,6 +9,8 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
+  #skip_before_action :authorized, only: [:new, :create, :welcome, :show]
+
   get "/" do
     erb :welcome
   end
@@ -24,4 +26,10 @@ class ApplicationController < Sinatra::Base
     end
   end 
 
+  def redirect_if_not_logged_in
+    if !logged_in?     
+    
+      redirect to '/login'
+    end 
+  end
 end

@@ -7,13 +7,20 @@
 <p><b>Number of reps/laps:</b> <%= @workout.numberofreps %></p>
 <p><b>Duration/Minutes:</b> <%= @workout.duration %></p>
 <br>
-<a href="/work_outs/<%= @workout.id %>/edit">Edit Workout</a>
-<br>
+<p><b>Added by:<b> <%= @workout.user.user_name %><p>
 </br>
+
+ <% if @workout.user_id == @current_user %>
+
+<form action="/work_outs/<%= @workout.id %>/edit" method="PATCH">
+  <input type="hidden" id="hidden" name="_method" value="EDIT"/>
+  <input type="submit" value="Edit Workout">
+</form>
 <form action="/work_outs/<%= @workout.id %>/delete" method="POST">
   <input type="hidden" id="hidden" name="_method" value="DELETE"/>
   <input type="submit" value="Delete Workout">
 </form>
 <br>
 </br>
-<a href="/work_outs">View All Workouts</a>
+<%end%>
+<a href="/homepage">View All Workouts</a>
