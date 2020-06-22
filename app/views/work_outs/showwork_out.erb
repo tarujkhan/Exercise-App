@@ -1,6 +1,8 @@
-<h1>Here are your workouts.</h1>
+
+<h1>Here is your workout.</h1>
 <br>
 </br>
+
 <h2><%= @workout.name %></h2>
 <br>
 <p><b>Date:</b> <%= @workout.date %></p>
@@ -10,7 +12,7 @@
 <p><b>Added by:<b> <%= @workout.user.user_name %><p>
 </br>
 
- <% if @workout.user_id == @current_user %>
+ <% if @workout.user_id == current_user.id %>
 
 <form action="/work_outs/<%= @workout.id %>/edit" method="PATCH">
   <input type="hidden" id="hidden" name="_method" value="EDIT"/>

@@ -2,7 +2,7 @@
 
 <% @workouts.each do |workout| %>
 
- <li><a href="/work_outs/<%= workout.id %>"><b><%= workout.name  %></b></a>
+ <li><a href=<%="/work_outs/#{workout.id}"%>><b><%= workout.name  %></b></a></li>
  <p><b>Added by: </b><%= workout.user.user_name %></p>
 
  <% end %>

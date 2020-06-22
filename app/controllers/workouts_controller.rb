@@ -19,7 +19,7 @@
                 if logged_in? 
                @workout = current_user.workouts && Workout.all
                #@workouts = Workout.all
-                erb :'/workou_ts/index'
+                erb :'/work_outs/index'
             else 
                 redirect_if_not_logged_in
                 end
@@ -29,7 +29,7 @@
              get '/work_outs/new' do 
                 if logged_in?
                 @current_user
-                erb :'/workou_ts/newwork_out'
+                erb :'/work_outs/newwork_out'
             else
                 redirect_if_not_logged_in
                 end
@@ -40,7 +40,7 @@
                 @workout = current_user.workouts.build(params)
                 if !@workout.save
                 @errors = @workout.errors.full_messages
-                erb :'/workou_ts/newwork_out'
+                erb :'/work_outs/newwork_out'
             else 
                 redirect to '/work_outs'
                 end
@@ -49,21 +49,34 @@
                 end
             end
 
+            get '/homepage' do
+                if logged_in?
+                    @user = User.find_by(user_name: params[:user_name])
+                    @workouts = Workout.all
+                    erb :'/work_outs/homepage'
+                else 
+                    redirect_if_not_logged_in
+                end
+            end
+
             get '/work_outs/:id' do 
                 @workout = Workout.find(params[:id])
+                #binding.pry
                    if logged_in? && @workout.user_id == current_user.id 
-                    erb :'/workou_ts/showwork_out' 
+                    erb :'/work_outs/showwork_out' 
                 else
-                  redirect to '/login'
+                    redirect to '/login'
                     end
                 end
+
+            
 
             get '/work_outs/:id/edit' do
                 @workout = Workout.find(params[:id])
                     if logged_in? && @workout.user == current_user
                       #@workout = Workout.find(params[:id])
                      # @user = User.find(session[:user_id])
-                      erb :'/workou_ts/editwork_out'
+                      erb :'/work_outs/editwork_out'
                   else
                     redirect_if_not_logged_in
                 end
@@ -75,7 +88,7 @@
                 #     @workout = Workout.find(params[:id])
                 #     @errors
 
-                #    erb: '/workou_ts/editwork_out.erb' 
+                #    erb: '/work_outs/editwork_out.erb' 
                 # else 
                     
                 #     redirect to :'/index'
@@ -91,7 +104,7 @@
                     redirect to("/work_outs/#{@workout.id}")
                  else 
                      @errors = @workout.errors.full_messages
-                     erb :'/workou_ts/editwork_out'
+                     erb :'/work_outs/editwork_out'
             
                      end
                 
@@ -108,17 +121,18 @@
                 end
 
                 get '/advice' do
-                    erb :'/workou_ts/advice'
+                    erb :'/work_outs/advice'
             end 
 
-                get '/homepage' do
+    #             get '/homepage' do
                     
-                    if logged_in?
-                        @user = User.find_by(user_name: params[:user_name])
-                    @workouts = Workout.all
-                    erb :'/workou_ts/homepage'
-                    else 
-                        redirect_if_not_logged_in
-        end
-    end 
+    #                 if logged_in?
+    #                     @user = User.find_by(user_name: params[:user_name])
+    #                 @workouts = Workout.all
+    #                 erb :'/work_outs/homepage'
+                    
+    #                 else 
+    #                     redirect_if_not_logged_in
+    #     end
+    # end 
 end

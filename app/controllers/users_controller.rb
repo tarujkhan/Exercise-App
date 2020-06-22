@@ -16,20 +16,18 @@
         
             if !@user.save
             @errors = @user.errors.full_messages 
-            erb :"user/create_user"
-         
-         else
-        
+                erb :"user/create_user"
+            else
             session[:user_id] = @user.id 
-            redirect to '/work_outs'
+                redirect to '/work_outs'
             end
         end
 
         get '/login' do
             if !session[:user_id] 
-            erb :'user/login'
-        else 
-            redirect to '/work_outs'
+                erb :'user/login'
+            else 
+                redirect to '/work_outs'
             end
         end
 
