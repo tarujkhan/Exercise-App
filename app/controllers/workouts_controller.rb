@@ -62,7 +62,7 @@
             get '/work_outs/:id' do 
                 @workout = Workout.find(params[:id])
                 #binding.pry
-                   if logged_in? && @workout.user_id == current_user.id 
+                   if logged_in? 
                     erb :'/work_outs/showwork_out' 
                 else
                     redirect to '/login'
