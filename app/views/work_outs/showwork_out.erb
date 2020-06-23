@@ -9,7 +9,7 @@
 <p><b>Number of reps/laps:</b> <%= @workout.numberofreps %></p>
 <p><b>Duration/Minutes:</b> <%= @workout.duration %></p>
 <br>
-<p><b>Added by:<b> <%= @workout.user.user_name %><p>
+<p><b>Belongs to:<b> <%= @workout.user.user_name %><p>
 </br>
 
  <% if @workout.user_id == current_user.id %>
@@ -26,3 +26,4 @@
 </br>
 <%end%>
 <a href="/homepage">View All Workouts</a>
+<a href="/work_outs">View my Workouts</a>

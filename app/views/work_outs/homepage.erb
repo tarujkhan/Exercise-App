@@ -1,9 +1,10 @@
 <h1>Here are all the workouts</h1>
 
+
 <% @workouts.each do |workout| %>
 
  <li><a href=<%="/work_outs/#{workout.id}"%>><b><%= workout.name  %></b></a></li>
- <p><b>Added by: </b><%= workout.user.user_name %></p>
+ <p><b>Belongs to: </b><%= workout.user.user_name %></p>
 
  <% end %>
- 
+ <a href="/work_outs">View my Workouts</a>
