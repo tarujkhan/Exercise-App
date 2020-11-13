@@ -1,7 +1,7 @@
 
 Content and Objectives:
 
-1. Create a basic app for tracking work outs
+1. Create a basic app for registering, signing in users and tracking their work outs
 2. This app will let someone create an account or log in to an existing account
 3. A person can add a work oute with its details as well as edit and delete
 4. The details will be the date, name of the work out, number of reps and the time
